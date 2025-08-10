@@ -3,11 +3,10 @@ const express = require("express");
 const cors = require("cors");
 const router = express.Router();
 const foodRoutes = require("./routes/foodRoutes");
-
-// const connectDB = require("./config/db");
+const connectDB = require("./config/db");
 
 const app = express();
-// connectDB();
+connectDB();
 
 app.use(
   cors({
