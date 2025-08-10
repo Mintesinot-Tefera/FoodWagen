@@ -4,27 +4,27 @@ import Header from "../components/Header";
 import Footer from "../components/Footer";
 
 export default function Home() {
-  // const [foods, setFoods] = useState([]);
-  // const [loading, setLoading] = useState(true);
+  const [foods, setFoods] = useState([]);
+  const [loading, setLoading] = useState(true);
 
-  // useEffect(() => {
-  //   fetch("http://localhost:5000/api/foods")
-  //     .then((res) => res.json())
-  //     .then((data) => {
-  //       setFoods(data);
-  //       setLoading(false);
-  //     })
-  //     .catch(() => setLoading(false));
-  // }, []);
+  useEffect(() => {
+    fetch("http://localhost:5000/api/foods")
+      .then((res) => res.json())
+      .then((data) => {
+        setFoods(data);
+        setLoading(false);
+      })
+      .catch(() => setLoading(false));
+  }, []);
 
-  // if (loading) return <p>Loading...</p>;
+  if (loading) return <p>Loading...</p>;
 
   return (
     <>
       <Header />
       <main style={{ padding: "2rem" }}>
         <h1 style={{ marginBottom: "1.5rem" }}>Food List</h1>
-        {/* <div
+        <div
           style={{
             display: "grid",
             gridTemplateColumns: "repeat(auto-fill,minmax(250px,1fr))",
@@ -52,7 +52,7 @@ export default function Home() {
               <p>Status: {food.restaurantStatus}</p>
             </div>
           ))}
-        </div> */}
+        </div>
       </main>
       <Footer />
     </>
